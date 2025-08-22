@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BitSoil — Monitoramento Climático Inteligente</title>
+
+  <!-- Reveal.js core CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/black.css" id="theme">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+  <style>
+    /* Fonte solicitada */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+    /* Tipografia moderna / startup */
+    :root{
+      --r-main-font: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+      --r-heading-font: 'Inter', var(--r-main-font);
+      --r-heading1-size: 2.2em;
+      --r-heading2-size: 1.6em;
+      --r-heading3-size: 1.25em;
+      --r-main-font-size: 34px; /* maior legibilidade em palco */
+      --accent: 0, 200, 83; /* verde principal */
+      --accent-2: 76, 175, 80; /* verde secundário */
+      --danger: 255,5,5;
+    }
+
+
+/* Tipografia moderna / startup */
+:root{
+--r-main-font: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+--r-heading-font: 'Inter', var(--r-main-font);
+--r-heading1-size: 2.2em;
+--r-heading2-size: 1.6em;
+--r-heading3-size: 1.25em;
+--r-main-font-size: 34px;
+--accent: 0, 200, 83; /* verde principal */
+--accent-2: 76, 175, 80; /* verde secundário */
+}
+
+
+.reveal{ letter-spacing: 0.1px; }
+.reveal h1, .reveal h2, .reveal h3{ font-weight: 600; }
+.reveal p, .reveal li{ font-weight: 400; }
+
+
+.ph{
+width: 100%;
+aspect-ratio: 16/9;
+border: 2px dashed rgba(255,255,255,.35);
+border-radius: 16px;
+display: grid;
+place-items: center;
+margin: 18px 0 0;
+font-size: .6em;
+opacity: .9;
+}
+.ph::before{ content: attr(data-note); opacity: .9; }
+
+
+.grid-2{ display: grid; grid-template-columns: 1.05fr .95fr; gap: 28px; align-items: start; }
+.grid-2 .ph{ margin-top: 0; }
+
+
+.bullets ul{ list-style: disc; margin: 0; padding-left: 1.1em; }
+.bullets li{ margin: .22em 0; }
+
+
+.chips{ display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.chip{ padding: 8px 12px; border-radius: 999px; background: rgba(var(--accent-2), .18); border: 1px solid rgba(var(--accent-2), .35); font-size: .7em; }
+
+
+/* Gradiente verde aplicado apenas aos textos com .accent */
+.accent{ background: linear-gradient(135deg, rgba(var(--accent),.9), rgba(var(--accent-2),.9)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+
+/* Texto de alerta */
+.danger{ background: linear-gradient(135deg, rgba(255,71,87,.95), rgba(255,107,53,.9)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.info {
+  background: linear-gradient(135deg, rgba(33, 150, 243, .95), rgba(13, 71, 161, .9));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+/* Cartões de fatos (tema compatível) */
+.facts-grid{ display:flex; justify-content: space-between; gap: 20px; margin-top: 24px; }
+.fact-card{ flex:1; padding: 12px; border-radius: 12px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); font-size: .8em; }
+.fact-card .icon{ font-size: 1.4em; margin-bottom: 8px; color: rgb(var(--accent-2)); }
+.fact-title{ font-weight: 600; margin-bottom: 6px; }
+
+
+.footer{ position: absolute; bottom: 12px; left: 40px; right: 40px; display: flex; justify-content: space-between; font-size: .45em; opacity: .7; }
+
+
+section[data-bg="light"]{ background: #0f1226; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- CAPA -->
+      <section class="title" data-background-gradient="linear-gradient(135deg, #0b1020, #151a3b)">
+        <h1><span class="accent"><i class="fa-solid fa-seedling"></i> BitSoil</span> Monitoramento Climático Inteligente</h1>
+        <!--
+        <div class="footer"><span>Startup • AgroTech • IoT • IA</span></div>
+        -->
+      </section>
+
+      <section class="bullets" data-bg="">
+        <h2>O desafio no campo</h2>
+        <div>
+          <ul>
+            <li>Dificuldade de <strong class="accent">monitoramento climático</strong> em tempo real;</li>
+            <li>Atraso nas decisões agrícolas por falta de <strong class="accent">dados</strong>;</li>
+            <li>As soluções existentes possuem um <span class="danger">custo elevado</span>;</li>
+            <li>Ineficiência na <strong class="accent">irrigação</strong> por <span class="danger">falta de tecnologia</span>;</li>
+            <li>Perda de produtividade por <span class="danger">manejo inadequado</span>;</li>
+          </ul>
+        </div>
+      
+        <!-- Destaques com dados (animam como fragment) -->
+        <div class="facts-grid fragment fade-in">
+            <div class="fact-card">
+              <i class="fa-solid fa-droplet icon"></i>
+              <div class="fact-title">Irrigação</div>
+              <p>~30% da água é desperdiçada por falta de sistemas inteligentes (FAO, 2022).</p>
+            </div>
+            <div class="fact-card">
+              <i class="fa-solid fa-seedling icon"></i>
+              <div class="fact-title">Produtividade</div>
+              <p>Até 20% de perdas ocorrem por decisões tardias (EMBRAPA, 2023).</p>
+            </div>
+          </div>
+          
+      </section>
+      
+
+<!-- A TECNOLOGIA NAS MÃOS DO PRODUTOR -->
+<section class="bullets">
+    <h2><i class="fa fa-microchip"></i> A tecnologia do campo <span class="accent">nas mãos do produtor</span></h2>
+    <div class="grid-2">
+      <div>
+        <ul>
+          <li class="fragment">Microcontroladores em rede para medir variáveis climáticas</li>
+          <li class="fragment">Uma estação meteorológica acessível</li>
+          <li class="fragment">Dados em tempo real e históricos</li>
+          <li class="fragment">Capacidade para realizar automações</li>
+          <li class="fragment">Interface web</li>
+        </ul>
+      </div>
+      <div class="carousel h-full transition">
+        <img src="img1.png" class="active-slide rounded-lg">
+        <img src="img2.png" class="hidden rounded-lg">
+        <img src="img3.png" class="hidden rounded-lg">
+        <img src="img4.png" class="hidden rounded-lg">
+      </div>
+    </div>
+  </section>
+  
+  <!-- Adicione jQuery antes do script -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    // Inicialização - mostra apenas a primeira imagem
+    $('.carousel img:first').addClass('active-slide').removeClass('hidden');
+  
+    // Configura o carrossel automático
+    setInterval(function() {
+      var $current = $('.carousel img.active-slide');
+      var $next = $current.next('img').length ? $current.next('img') : $('.carousel img:first');
+  
+      $current.removeClass('active-slide').addClass('hidden');
+      $next.removeClass('hidden').addClass('active-slide');
+    }, 3000);
+  });
+  </script>
+  
+
+      <!-- MISSÃO VISÃO VALORES -->
+      <section>
+        <h2>Missão, Visão e Valores</h2>
+        <div class="grid-2 tight">
+          <div>
+            <h3>Missão</h3>
+            <p>Reduzir custos e <strong>melhorar produtividade</strong> com monitoramento climático em tempo real.</p>
+            <h3>Visão</h3>
+            <p>Ser referência em monitoramento e automação agrícola para pequenos produtores.</p>
+          </div>
+          <div>
+            <h3>Valores</h3>
+            <div class="chips">
+              <span class="chip">Integridade</span>
+              <span class="chip">Confiabilidade</span>
+              <span class="chip">Disponibilidade</span>
+            </div>
+            <div class="ph" data-note="Imagem institucional / time / campo"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GRÁFICOS DE INDICADORES -->
+      <section>
+        <h2>Indicadores coletados</h2>
+        <div class="chart-ph small">Espaço para gráficos (temperatura, umidade, pressão, solo)</div>
+      </section>
+
+      <!-- MVP MÓDULO EMBARCADO -->
+      <section>
+        <h2>MVP — Módulo embarcado</h2>
+        <div class="grid-2">
+          <div class="bullets">
+            <ul>
+              <li>Módulo compacto para instalação em campo.</li>
+              <li>Alimentado com <strong>célula fotovoltaica</strong>.</li>
+              <li>Monitora pressão, umidade e temperatura atmosféricas.</li>
+              <li>Mede <strong>temperatura e umidade do solo</strong>.</li>
+            </ul>
+          </div>
+          <div class="ph" data-note="Foto do módulo / render 3D"></div>
+        </div>
+      </section>
+
+      <!-- ANTIGO PROTÓTIPO -->
+      <section>
+        <h2>Protótipo anterior</h2>
+        <div class="grid-2">
+          <div class="ph" data-note="Imagem do protótipo antigo"></div>
+          <div class="bullets">
+            <ul>
+              <li>Evolução de design para maior robustez e autonomia.</li>
+              <li>Aprendizados incorporados à versão atual.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- REDE DE MALHA -->
+      <section>
+        <h2>Comunicação em <span class="accent">rede de malha</span></h2>
+        <div class="grid-2">
+          <div class="bullets">
+            <ul>
+              <li>Confiabilidade e cobertura ampliada no campo.</li>
+              <li>Flexibilidade para expansão por módulos.</li>
+              <li>Baixo consumo e resiliência a falhas.</li>
+            </ul>
+          </div>
+          <div class="ph" data-note="Esquema de topologia de rede (mesh)"></div>
+        </div>
+      </section>
+
+      <!-- VALOR PARA O PRODUTOR -->
+      <section class="bullets">
+        <h2>Valor para o produtor rural</h2>
+        <ul>
+          <li>Visualização <strong>em tempo real</strong> do que acontece no plantio.</li>
+          <li>Acesso aos dados em <strong>qualquer dispositivo</strong>.</li>
+          <li>Facilidade de uso sem depender de formação técnica.</li>
+        </ul>
+      </section>
+
+      <!-- PÚBLICO-ALVO -->
+      <section>
+        <h2>Para quem é o <span class="accent">BitSoil</span>?</h2>
+        <div class="chips">
+          <span class="chip">Pequenos e médios produtores</span>
+          <span class="chip">Instituições de ensino e pesquisa</span>
+          <span class="chip">Cooperativas agrícolas</span>
+        </div>
+        <div class="ph" data-note="Fotos do público-alvo / casos de uso"></div>
+      </section>
+
+      <!-- MODELO DE NEGÓCIO -->
+      <section>
+        <h2>Como monetizar?</h2>
+        <div class="grid-2">
+          <div class="bullets">
+            <ul>
+              <li><strong>Assinatura mensal</strong> para acesso ao sistema.</li>
+              <li>Personalizações por necessidade do cliente.</li>
+              <li>Locação de módulos adicionais sob demanda.</li>
+            </ul>
+          </div>
+          <div class="ph" data-note="Tabela de planos / pricing cards"></div>
+        </div>
+      </section>
+
+      <!-- PRÓXIMOS PASSOS -->
+      <section>
+        <h2>Próximos passos</h2>
+        <div class="bullets">
+          <ul>
+            <li>Concluir transição de hardware e software.</li>
+            <li>Integrar modelo de <strong>previsão</strong> (IA).</li>
+            <li>Implantar o sistema em ambiente de produção.</li>
+            <li>Modularidade com adaptação pelo cliente.</li>
+          </ul>
+        </div>
+        <div class="ph" data-note="Roadmap visual / timeline"></div>
+      </section>
+
+      <!-- CONTATO / ENCERRAMENTO -->
+      <section data-background-gradient="linear-gradient(135deg, #0b1020, #151a3b)">
+        <h2>Contato</h2>
+        <p class="small">Adicione aqui site, e-mail, QR Code e redes sociais.</p>
+        <div class="ph" data-note="Espaço para QR Code / call-to-action"></div>
+        <div class="footer"><span>Obrigado!</span><span>BitSoil • AgroTech</span></div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js core JS -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+  <script>
+    const deck = new Reveal({
+      hash: true,
+      slideNumber: true,
+      transition: 'slide',
+      controls: true,
+      progress: true,
+      center: true
+    });
+    deck.initialize();
+  </script>
+</body>
+</html>
