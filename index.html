@@ -95,6 +95,14 @@ opacity: .9;
 
 .footer{ position: absolute; bottom: 12px; left: 40px; right: 40px; display: flex; justify-content: space-between; font-size: .45em; opacity: .7; }
 
+.values-list { list-style: none; margin: 0; padding: 0; }
+.values-list li {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.values-list li:last-child { border-bottom: 0; }
+.values-list i { color: rgb(var(--accent-2)); opacity: .95; }
+
 
 section[data-bg="light"]{ background: #0f1226; }
   </style>
@@ -103,7 +111,10 @@ section[data-bg="light"]{ background: #0f1226; }
   <div class="reveal">
     <div class="slides">
 
-      <!-- CAPA -->
+
+
+
+
       <section class="title" data-background-gradient="linear-gradient(135deg, #0b1020, #151a3b)">
         <h1><span class="accent"><i class="fa-solid fa-seedling"></i> BitSoil</span> Monitoramento Climático Inteligente</h1>
         <!--
@@ -141,16 +152,17 @@ section[data-bg="light"]{ background: #0f1226; }
       
 
 <!-- A TECNOLOGIA NAS MÃOS DO PRODUTOR -->
+ <!-- COLOCAR AS IMAGENS NOVAS -->
 <section class="bullets">
-    <h2><i class="fa fa-microchip"></i> A tecnologia do campo <span class="accent">nas mãos do produtor</span></h2>
+    <h2>A tecnologia do campo <span class="accent">nas mãos do produtor</span></h2>
     <div class="grid-2">
       <div>
         <ul>
-          <li class="fragment">Microcontroladores em rede para medir variáveis climáticas</li>
-          <li class="fragment">Uma estação meteorológica acessível</li>
-          <li class="fragment">Dados em tempo real e históricos</li>
-          <li class="fragment">Capacidade para realizar automações</li>
-          <li class="fragment">Interface web</li>
+          <li class="">Módulos em rede para medir <span class="accent"> variáveis climáticas;</span></li>
+          <li class="">Uma estação meteorológica <span class="accent"> acessível</span>;</li>
+          <li class=""><span class="accent"> Dados em tempo real</span> e histórico de coleta;</li>
+          <li class="">Sistema para <span class="accent"> automações</span> integrado;</li>
+          <li class="">Interface web e aplicativo</li>
         </ul>
       </div>
       <div class="carousel h-full transition">
@@ -182,32 +194,31 @@ section[data-bg="light"]{ background: #0f1226; }
   
 
       <!-- MISSÃO VISÃO VALORES -->
-      <section>
+      <section class="bullets tight">
         <h2>Missão, Visão e Valores</h2>
-        <div class="grid-2 tight">
+        <div class="grid-2">
           <div>
             <h3>Missão</h3>
             <p>Reduzir custos e <strong>melhorar produtividade</strong> com monitoramento climático em tempo real.</p>
+      
             <h3>Visão</h3>
             <p>Ser referência em monitoramento e automação agrícola para pequenos produtores.</p>
           </div>
+      
           <div>
             <h3>Valores</h3>
-            <div class="chips">
-              <span class="chip">Integridade</span>
-              <span class="chip">Confiabilidade</span>
-              <span class="chip">Disponibilidade</span>
-            </div>
-            <div class="ph" data-note="Imagem institucional / time / campo"></div>
+            <ul class="values-list">
+              <li><i class="fa-solid fa-circle-check"></i> Integridade</li>
+              <li><i class="fa-solid fa-circle-check"></i> Confiabilidade</li>
+              <li><i class="fa-solid fa-circle-check"></i> Disponibilidade</li>
+            </ul>
           </div>
         </div>
       </section>
+      
 
-      <!-- GRÁFICOS DE INDICADORES -->
-      <section>
-        <h2>Indicadores coletados</h2>
-        <div class="chart-ph small">Espaço para gráficos (temperatura, umidade, pressão, solo)</div>
-      </section>
+
+
 
       <!-- MVP MÓDULO EMBARCADO -->
       <section>
@@ -306,10 +317,11 @@ section[data-bg="light"]{ background: #0f1226; }
 
       <!-- CONTATO / ENCERRAMENTO -->
       <section data-background-gradient="linear-gradient(135deg, #0b1020, #151a3b)">
-        <h2>Contato</h2>
-        <p class="small">Adicione aqui site, e-mail, QR Code e redes sociais.</p>
-        <div class="ph" data-note="Espaço para QR Code / call-to-action"></div>
-        <div class="footer"><span>Obrigado!</span><span>BitSoil • AgroTech</span></div>
+        <h2 class="accent"><span class="accent"> Obrigado!</span></h2>
+        <p class="small">agro.admit.com.br • bitsoilbr@gmail.com</p>
+        <div class="ph" data-note="">
+            <img src ="qrcode.png">
+        </div>
       </section>
 
     </div>
