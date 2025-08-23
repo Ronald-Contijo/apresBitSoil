@@ -239,7 +239,7 @@ section[data-bg="light"]{ background: #0f1226; }
       <!-- REDE DE MALHA -->
       <section>
         <h2>Comunicação em <span class="accent">rede de malha</span></h2>
-        <div class="grid-2">
+        <div class="">
           <div class="bullets">
             <ul>
               <li>Confiabilidade e cobertura ampliada no campo.</li>
@@ -247,19 +247,76 @@ section[data-bg="light"]{ background: #0f1226; }
               <li>Baixo consumo e resiliência a falhas.</li>
             </ul>
           </div>
-          <div class="ph" data-note="Esquema de topologia de rede (mesh)"></div>
+          <img src="protocolo.png">
         </div>
       </section>
 
+      <style>
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;            /* menos espaço entre os cards */
+  margin-top: 20px;
+}
+
+.benefit-card {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+  transition: transform .3s ease, box-shadow .3s ease;
+  font-size: .9em;       /* texto menor */
+}
+
+.benefit-card h3 {
+  margin: 8px 0;
+  font-size: 1.05em;
+}
+
+.benefit-card p {
+  font-size: .85em;
+  line-height: 1.3em;
+}
+
+.benefit-card .icon {
+  font-size: 1.8em;
+  margin-bottom: 6px;
+  color: rgb(var(--accent));
+}
+
+      </style>
       <!-- VALOR PARA O PRODUTOR -->
-      <section class="bullets">
-        <h2>Valor para o produtor rural</h2>
-        <ul>
-          <li>Visualização <strong>em tempo real</strong> do que acontece no plantio.</li>
-          <li>Acesso aos dados em <strong>qualquer dispositivo</strong>.</li>
-          <li>Facilidade de uso sem depender de formação técnica.</li>
-        </ul>
+      <section data-transition="slide">
+        <h2> Benefícios Principais</h2>
+      
+        <div class="benefits-grid">
+          <div class="benefit-card fragment fade-in">
+            <i class="fa-solid fa-leaf icon"></i>
+            <h3>Eficiência de Recursos</h3>
+            <p>Reduza o uso de água e fertilizantes com monitoramento e recomendações precisas.</p>
+          </div>
+      
+          <div class="benefit-card fragment fade-in">
+            <i class="fa-solid fa-droplet icon"></i>
+            <h3>Irrigação Otimizada</h3>
+            <p>Garanta que suas culturas recebam a quantidade certa de água no momento certo.</p>
+          </div>
+      
+          <div class="benefit-card fragment fade-in">
+            <i class="fa-solid fa-chart-line icon"></i>
+            <h3>Produtividade Aumentada</h3>
+            <p>Alcance maiores rendimentos e culturas de melhor qualidade por meio de dados.</p>
+          </div>
+      
+          <div class="benefit-card fragment fade-in">
+            <i class="fa-solid fa-signal icon"></i>
+            <h3>Operação Remota</h3>
+            <p>Monitore suas culturas em tempo real, mesmo em campos extensos.</p>
+          </div>
+        </div>
       </section>
+      
 
       <!-- PÚBLICO-ALVO -->
       <section class="bullets" data-transition="slide">
@@ -291,8 +348,8 @@ section[data-bg="light"]{ background: #0f1226; }
 
       <!-- MODELO DE NEGÓCIO -->
       <section>
-        <h2>Como monetizar?</h2>
-        <div class="grid-2">
+        <h2>Como <span class="accent"> monetizar?</span></h2>
+        <div class="">
           <div class="bullets">
             <ul>
               <li><strong>Assinatura mensal</strong> para acesso ao sistema.</li>
@@ -300,7 +357,6 @@ section[data-bg="light"]{ background: #0f1226; }
               <li>Locação de módulos adicionais sob demanda.</li>
             </ul>
           </div>
-          <div class="ph" data-note="Tabela de planos / pricing cards"></div>
         </div>
       </section>
 
