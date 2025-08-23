@@ -153,45 +153,37 @@ section[data-bg="light"]{ background: #0f1226; }
 
 <!-- A TECNOLOGIA NAS MÃOS DO PRODUTOR -->
  <!-- COLOCAR AS IMAGENS NOVAS -->
-<section class="bullets">
-    <h2>A tecnologia do campo <span class="accent">nas mãos do produtor</span></h2>
-    <div class="grid-2">
-      <div>
-        <ul>
-          <li class="">Módulos em rede para medir <span class="accent"> variáveis climáticas;</span></li>
-          <li class="">Uma estação meteorológica <span class="accent"> acessível</span>;</li>
-          <li class=""><span class="accent"> Dados em tempo real</span> e histórico de coleta;</li>
-          <li class="">Sistema para <span class="accent"> automações</span> integrado;</li>
-          <li class="">Interface web e aplicativo</li>
-        </ul>
-      </div>
-      <div class="carousel h-full transition">
-        <img src="img1.png" class="active-slide rounded-lg">
-        <img src="img2.png" class="hidden rounded-lg">
-        <img src="img3.png" class="hidden rounded-lg">
-        <img src="img4.png" class="hidden rounded-lg">
-      </div>
-    </div>
-  </section>
-  
-  <!-- Adicione jQuery antes do script -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-  $(document).ready(function() {
-    // Inicialização - mostra apenas a primeira imagem
-    $('.carousel img:first').addClass('active-slide').removeClass('hidden');
-  
-    // Configura o carrossel automático
-    setInterval(function() {
-      var $current = $('.carousel img.active-slide');
-      var $next = $current.next('img').length ? $current.next('img') : $('.carousel img:first');
-  
-      $current.removeClass('active-slide').addClass('hidden');
-      $next.removeClass('hidden').addClass('active-slide');
-    }, 3000);
-  });
-  </script>
-  
+ <section class="bullets">
+  <h2>A tecnologia do campo <span class="accent">nas mãos do produtor</span></h2>
+  <ul>
+    <li>Módulos em rede para medir <span class="accent">variáveis climáticas</span>;</li>
+    <li>Uma estação meteorológica <span class="accent">acessível</span>;</li>
+    <li><span class="accent">Dados em tempo real</span> e histórico de coleta;</li>
+    <li>Sistema para <span class="accent">automações</span> integrado;</li>
+    <li>Interface web e aplicativo.</li>
+  </ul>
+</section>
+
+
+<section>
+  <div style="display:flex; justify-content:center; gap:20px; margin-top:20px; align-items:center;">
+    <img src="1.png" alt="Exemplo 1"
+         style="max-width:45%; max-height:100vh; border-radius:12px; object-fit:contain;">
+    <img src="2.png" alt="Exemplo 2"
+         style="max-width:45%; max-height:100vh; border-radius:12px; object-fit:contain;">
+  </div>
+</section>
+
+<section>
+  <div style="display:flex; justify-content:center; gap:20px; margin-top:20px; align-items:center;">
+    <img src="3.png" alt="Exemplo 3"
+         style="max-width:45%; max-height:100vh; border-radius:12px; object-fit:contain;">
+    <img src="4.png" alt="Exemplo 4"
+         style="max-width:45%; max-height:100vh; border-radius:12px; object-fit:contain;">
+  </div>
+</section>
+
+
 
       <!-- MISSÃO VISÃO VALORES -->
       <section class="bullets tight">
