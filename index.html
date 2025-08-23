@@ -222,18 +222,34 @@ section[data-bg="light"]{ background: #0f1226; }
 
       <!-- MVP MÓDULO EMBARCADO -->
        <!--atualizar pra colocar também o que pretendemos -->
-      <section>
+       <style>
+.mvp-img-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+.mvp-img {
+  max-width: 80%;
+  height: auto;
+  max-height: 40vh; /* garante que não passe do slide */
+  border-radius: 5%;
+  object-fit: contain;
+}
+
+       </style>
+       <section>
         <h2>MVP — Módulo embarcado</h2>
-        <div>
+        <div class="mvp">
           <div class="bullets">
             <ul>
               <li>Módulo compacto alimentado com célula fotovoltaica para instalação em campo.</li>
-              <li>Monitora pressão, umidade e temperatura atmosféricas, temperatura e umidade do solo, podendo integrar sensores adicionais, como pH e NPK</strong>.</li>
+              <li>Monitora pressão, umidade e temperatura atmosféricas; temperatura e umidade do solo; e pode integrar sensores adicionais (pH, NPK).</li>
             </ul>
           </div>
-          <img style="border-radius: 5%;" src="Projeto_BitSoil.png">
+          <img src="Projeto_BitSoil.png" alt="MVP BitSoil" class="mvp-img">
         </div>
       </section>
+      
 
 
       <!-- REDE DE MALHA -->
